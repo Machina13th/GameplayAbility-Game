@@ -1,0 +1,28 @@
+// copyright these nuts
+
+#pragma once
+
+#include "CoreMinimal.h"
+#include "GameFramework/PlayerState.h"
+#include "AuraPlayerState.generated.h"
+#include "AbilitySystemInterface.h"
+
+class UAttributeSet;
+class UAbilitySystemComponent;
+/**
+ * 
+ */
+UCLASS()
+class AURA_API AAuraPlayerState : public APlayerState, public IAbilitySystemInterface
+{
+	GENERATED_BODY()
+protected:
+	UPROPERTY()
+	TObjectPtr<UAbilitySystemComponent> AbilitySystemComponent;
+	UPROPERTY()
+	TObjectPtr<UAttributeSet> AttributeSet;
+public:
+	AAuraPlayerState();
+	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
+	UAttributeSet* GetAttributeSet() const {return AttributeSet;};
+};
