@@ -3,9 +3,9 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "AbilitySystemInterface.h"
 #include "GameFramework/PlayerState.h"
 #include "AuraPlayerState.generated.h"
-#include "AbilitySystemInterface.h"
 
 class UAttributeSet;
 class UAbilitySystemComponent;
